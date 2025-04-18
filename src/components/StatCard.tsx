@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
+import * as FaIcons from 'react-icons/fa';
 import { Statistique } from '../types';
 
 interface StatCardProps {
@@ -46,9 +46,9 @@ const StatCard: React.FC<StatCardProps> = ({ stat, index }) => {
           transition={{ duration: 0.3, delay: index * 0.1 + 0.3 }}
         >
           {stat.evolution === 'hausse' ? (
-            <FaArrowUp className="mr-1" />
+            <FaIcons.FaArrowUp className="mr-1" />
           ) : stat.evolution === 'baisse' ? (
-            <FaArrowDown className="mr-1" />
+            <FaIcons.FaArrowDown className="mr-1" />
           ) : null}
           <span className="font-semibold">{stat.pourcentage}%</span>
         </motion.div>

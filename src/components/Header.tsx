@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaUser, FaBell, FaSearch, FaBars, FaTimes } from 'react-icons/fa';
+import * as FaIcons from 'react-icons/fa';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -80,14 +80,14 @@ const Header: React.FC = () => {
               whileHover={{ scale: 1.1 }}
               transition={{ type: 'spring', stiffness: 400, damping: 10 }}
             >
-              <FaSearch className={`${isScrolled ? 'text-gray-700' : 'text-gray-100'}`} />
+              <FaIcons.FaSearch className={`${isScrolled ? 'text-gray-700' : 'text-gray-100'}`} />
             </motion.div>
             <motion.div
               className="relative"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <FaBell className={`${isScrolled ? 'text-gray-700' : 'text-gray-100'}`} />
+              <FaIcons.FaBell className={`${isScrolled ? 'text-gray-700' : 'text-gray-100'}`} />
               <span className="absolute -top-1 -right-1 bg-red-500 rounded-full w-2 h-2"></span>
             </motion.div>
             <motion.div
@@ -96,7 +96,7 @@ const Header: React.FC = () => {
               whileTap={{ scale: 0.95 }}
             >
               <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
-                <FaUser className="text-white text-sm" />
+                <FaIcons.FaUser className="text-white text-sm" />
               </div>
             </motion.div>
           </motion.div>
@@ -110,9 +110,9 @@ const Header: React.FC = () => {
             animate={{ opacity: 1 }}
           >
             {isMobileMenuOpen ? (
-              <FaTimes className={`text-xl ${isScrolled ? 'text-gray-700' : 'text-gray-100'}`} />
+              <FaIcons.FaTimes className={`text-xl ${isScrolled ? 'text-gray-700' : 'text-gray-100'}`} />
             ) : (
-              <FaBars className={`text-xl ${isScrolled ? 'text-gray-700' : 'text-gray-100'}`} />
+              <FaIcons.FaBars className={`text-xl ${isScrolled ? 'text-gray-700' : 'text-gray-100'}`} />
             )}
           </motion.div>
         </div>
@@ -142,17 +142,17 @@ const Header: React.FC = () => {
               ))}
               <div className="flex justify-between pt-2">
                 <motion.div whileHover={{ scale: 1.05 }}>
-                  <FaSearch className="text-gray-700" />
+                  <FaIcons.FaSearch className="text-gray-700" />
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }}>
                   <div className="relative">
-                    <FaBell className="text-gray-700" />
+                    <FaIcons.FaBell className="text-gray-700" />
                     <span className="absolute -top-1 -right-1 bg-red-500 rounded-full w-2 h-2"></span>
                   </div>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }}>
                   <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
-                    <FaUser className="text-white text-sm" />
+                    <FaIcons.FaUser className="text-white text-sm" />
                   </div>
                 </motion.div>
               </div>

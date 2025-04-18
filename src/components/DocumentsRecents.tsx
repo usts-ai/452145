@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Document } from '../types';
-import { FaFilePdf, FaFileWord, FaFileExcel, FaDownload, FaEye } from 'react-icons/fa';
+import * as FaIcons from 'react-icons/fa';
 
 interface DocumentsRecentsProps {
   documents: Document[];
@@ -11,13 +11,13 @@ const DocumentsRecents: React.FC<DocumentsRecentsProps> = ({ documents }) => {
   const getIconByType = (type: string) => {
     switch (type) {
       case 'PDF':
-        return <FaFilePdf className="text-red-500" />;
+        return <FaIcons.FaFilePdf className="text-red-500" />;
       case 'Word':
-        return <FaFileWord className="text-blue-500" />;
+        return <FaIcons.FaFileWord className="text-blue-500" />;
       case 'Excel':
-        return <FaFileExcel className="text-green-500" />;
+        return <FaIcons.FaFileExcel className="text-green-500" />;
       default:
-        return <FaFilePdf />;
+        return <FaIcons.FaFilePdf />;
     }
   };
 
@@ -84,14 +84,14 @@ const DocumentsRecents: React.FC<DocumentsRecentsProps> = ({ documents }) => {
                     whileHover={{ scale: 1.2 }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    <FaEye />
+                    <FaIcons.FaEye />
                   </motion.button>
                   <motion.button
                     className="p-1 text-gray-400 hover:text-blue-500"
                     whileHover={{ scale: 1.2 }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    <FaDownload />
+                    <FaIcons.FaDownload />
                   </motion.button>
                 </div>
               </div>

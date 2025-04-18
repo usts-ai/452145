@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { gsap } from 'gsap';
-import { FaPlus, FaBell, FaChartLine, FaFile, FaUserPlus, FaCog, FaClipboardList } from 'react-icons/fa';
+import * as FaIcons from 'react-icons/fa';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -120,7 +120,7 @@ const Dashboard: React.FC = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <FaPlus className="inline mr-2" />
+                  <FaIcons.FaPlus className="inline mr-2" />
                   Nouveau client
                 </motion.button>
                 
@@ -132,7 +132,7 @@ const Dashboard: React.FC = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <FaFile className="inline mr-2" />
+                  <FaIcons.FaFile className="inline mr-2" />
                   Créer un document
                 </motion.button>
               </div>
@@ -174,13 +174,13 @@ const Dashboard: React.FC = () => {
         <div className="bg-white rounded-xl shadow-xl p-6 -mt-8">
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
             {[
-              { icon: FaUserPlus, label: 'Ajouter client', action: 'add-client' },
-              { icon: FaFile, label: 'Nouveau document', action: 'new-document' },
-              { icon: FaChartLine, label: 'Statistiques', action: 'stats' },
-              { icon: FaClipboardList, label: 'Tâches', action: 'tasks' },
-              { icon: FaBell, label: 'Notifications', action: 'notifications' },
-              { icon: FaCog, label: 'Paramètres', action: 'settings' },
-              { icon: FaPlus, label: 'Plus d\'options', action: 'more' }
+              { icon: FaIcons.FaUserPlus, label: 'Ajouter client', action: 'add-client' },
+              { icon: FaIcons.FaFile, label: 'Nouveau document', action: 'new-document' },
+              { icon: FaIcons.FaChartLine, label: 'Statistiques', action: 'stats' },
+              { icon: FaIcons.FaClipboardList, label: 'Tâches', action: 'tasks' },
+              { icon: FaIcons.FaBell, label: 'Notifications', action: 'notifications' },
+              { icon: FaIcons.FaCog, label: 'Paramètres', action: 'settings' },
+              { icon: FaIcons.FaPlus, label: 'Plus d\'options', action: 'more' }
             ].map((item, index) => (
               <motion.div
                 key={index}

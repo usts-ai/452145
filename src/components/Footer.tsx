@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
+import * as FaIcons from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   return (
@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
               Solutions digitales professionnelles pour gérer vos relations clients et vos documents d'entreprise.
             </p>
             <div className="flex space-x-4">
-              {[FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram].map((Icon, index) => (
+              {[FaIcons.FaFacebookF, FaIcons.FaTwitter, FaIcons.FaLinkedinIn, FaIcons.FaInstagram].map((Icon, index) => (
                 <motion.a
                   key={index}
                   href="#"
@@ -80,9 +80,9 @@ const Footer: React.FC = () => {
             <h3 className="text-xl font-semibold mb-6">Contactez-nous</h3>
             <div className="space-y-4">
               {[
-                { icon: FaMapMarkerAlt, text: '123 Avenue des Entreprises, 75000 Paris' },
-                { icon: FaPhone, text: '+33 1 23 45 67 89' },
-                { icon: FaEnvelope, text: 'contact@crmpro.fr' }
+                { icon: FaIcons.FaMapMarkerAlt, text: '123 Avenue des Entreprises, 75000 Paris' },
+                { icon: FaIcons.FaPhone, text: '+33 1 23 45 67 89' },
+                { icon: FaIcons.FaEnvelope, text: 'contact@crmpro.fr' }
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -124,7 +124,7 @@ const Footer: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <p>© {new Date().getFullYear()} CRM Pro. Tous droits réservés.</p>
+          <p> {new Date().getFullYear()} CRM Pro. Tous droits réservés.</p>
           <div className="flex justify-center mt-4 space-x-6 text-sm">
             <motion.a 
               href="#" 
